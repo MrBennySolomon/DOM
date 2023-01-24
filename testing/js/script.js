@@ -50,39 +50,42 @@ buttonStart.addEventListener('click', function() {
 
 const buildBoard = () => {
   for (const row of board) {
+    const div = document.createElement('div');
     for (const col of row) {
-      switch (buildBoard[row][col]) {
+      console.log(col);
+      switch (col) {
         case 1:
-          mainScreen.appendChild(dirt);
+          div.appendChild(dirt);
           break;
         case 2:
-          mainScreen.appendChild(grass);
+          div.appendChild(grass);
           break;
         case 3:
-          mainScreen.appendChild(leaves);
+          div.appendChild(leaves);
           break;
         case 4:
-          mainScreen.appendChild(stone);
+          div.appendChild(stone);
           break;
         case 5:
-          mainScreen.appendChild(wood);
+          div.appendChild(wood);
           break;
         case 6:
-          mainScreen.appendChild(sky);
+          div.appendChild(sky);
           break;
         case 7:
-          mainScreen.appendChild(cloud);
+          div.appendChild(cloud);
           break;
         default:
           break;
       }
     }
+    mainScreen.appendChild(div);
   }
   // document.body.appendChild(mainScreen);
 }
 
 
-
+buildBoard();
 
 
 
