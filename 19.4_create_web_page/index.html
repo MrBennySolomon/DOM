@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100vw;
+      height: 10vh;
+      background-color: #333;
+      color: white;
+      font-size: 30px;
+    }
+    .right {
+      
+    }
+    h1 {
+      padding-left: 20px;
+    }
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+    }
+    ul li {
+      padding: 20px;
+
+    }
+  </style>
+</head>
+<body>
+  
+
+  <script>
+    const divLeft = document.createElement('div');
+    divLeft.setAttribute('class', 'left');
+    const divRight = document.createElement('div');
+    divRight.setAttribute('class', 'right');
+    const ul = document.createElement('ul');
+    li1 = document.createElement('li');
+    li1.innerText = 'ABOUT';
+    li2 = document.createElement('li');
+    li2.innerText = 'CONTACT';
+    li3 = document.createElement('li');
+    li3.innerText = 'INFO';
+    const h1 = document.createElement('h1');
+    h1.innerText = 'LOGO';
+    ul.appendChild(li1);
+    ul.appendChild(li2);
+    ul.appendChild(li3);
+
+    divLeft.appendChild(h1);
+    divRight.appendChild(ul);
+
+    const navbar = document.createElement('div');
+    navbar.setAttribute('class', 'navbar');
+    navbar.appendChild(divLeft);
+    navbar.appendChild(divRight);
+
+    
+
+    document.body.appendChild(navbar);
+
+  </script>
+</body>
+</html>
