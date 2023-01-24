@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+    const users = [
+      {
+        id: 167464,
+        firstName: "Jimmy",
+        lastName: "Arnold",
+        email: "jimmya@gmail.com",
+      },
+      {
+        id: 578447,
+        firstName: "Martha",
+        lastName: "Goldman",
+        email: "gold@hotmail.com",
+      },
+      {
+        id: 864578,
+        firstName: "Tim",
+        lastName: "Burton",
+        email: "timmy.hotmail.com",
+      },
+    ];
+
+    // 1. Loop over the array with the forEach method and
+    // dynamically create an ordered list of the first and last
+    // names of the objects.
+    const ol = document.createElement('ol');
+    //ol.style = 'list-style-type: none;';
+    
+    for (let i = 0; i < users.length; i++) {
+      if (i === 0 || i === users.length - 1) {
+        const li = document.createElement('li');
+        //li.setAttribute('data-id', users[i].id + '');
+        li.innerText = users[i].firstName + ' ' + users[i].lastName;
+        ol.appendChild(li);
+      }
+    } 
+    document.body.appendChild(ol);
+    // 2. Remove the bullet points of the ordered list with
+    // JavaScript.
+    const ol2 = document.createElement('ol');
+    ol2.style = 'list-style-type: none;';
+    
+    for (let i = 0; i < users.length; i++) {
+      if (i === 0 || i === users.length - 1) {
+        const li = document.createElement('li');
+        //li.setAttribute('data-id', users[i].id + '');
+        li.innerText = users[i].firstName + ' ' + users[i].lastName;
+        ol2.appendChild(li);
+      }
+    } 
+    document.body.appendChild(ol2);
+    // 3. Create a custom data attribute called “data-id” and attach
+    // the id value to each li.
+    const ol3 = document.createElement('ol');
+    ol3.style = 'list-style-type: none;';
+    
+    for (let i = 0; i < users.length; i++) {
+      if (i === 0 || i === users.length - 1) {
+        const li = document.createElement('li');
+        li.setAttribute('data-id', users[i].id + '');
+        li.innerText = users[i].firstName + ' ' + users[i].lastName;
+        ol3.appendChild(li);
+      }
+    } 
+    document.body.appendChild(ol3);
+  </script>
+</body>
+</html>
