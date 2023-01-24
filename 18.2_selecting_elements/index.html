@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modifying Elements</title>
+    <title>Something Else</title>
   </head>
   <style>
     h1 {
@@ -23,6 +23,21 @@
     <div id="description">Select me and change my display property</div>
   </body>
   <script>
-    //your js code here
+    // 1. Change the h1 color to blue.
+    const h1 = document.querySelector('h1');
+    h1.style.color = 'blue';
+    // 2. Change the paragraph to 30 px
+    const p = document.querySelector('p');
+    p.style.fontSize = '30px';
+    // 3. Change the description to an inline-block
+    const div = document.getElementById('description');
+    div.style.display = 'inline-block';
+    // 4. Change the body to a background color of green
+    const body = document.querySelector('body');
+    body.style.backgroundColor = 'green';
+    // 5. Change the document title from “Modifying Elements” to
+    // something else.
+    title = document.title;
+    title = 'Modifying Elements';
   </script>
 </html>
