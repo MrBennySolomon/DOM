@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      width: 100vw;
+      height: 100vh;
+      background-color: gray;
+    }
+    .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 400px;
+      height: 200px;
+      border: 2px solid black;
+      background-color: white;
+    }
+    button {
+      background-color: black;
+      font-size: 24px;
+      color: white;
+      padding: 20px 15px;
+    }
+    .input-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="flex">
+    <h2>Text to copy</h2>
+    <div class="text">123456</div>
+    <div class="container">
+      <div class="input-container">
+        <input id="1" maxlength="1" size="1" type="text">
+        <input id="2" maxlength="1" size="1" type="text">
+        <input id="3" maxlength="1" size="1" type="text">
+        <input id="4" maxlength="1" size="1" type="text">
+        <input id="5" maxlength="1" size="1" type="text">
+        <input id="6" maxlength="1" size="1" type="text">
+      </div>
+      <button>Verify</button>
+    </div>
+  </div>
+  <script>
+
+    const input1 = document.getElementById('1');
+    const input2 = document.getElementById('2');
+    const input3 = document.getElementById('3');
+    const input4 = document.getElementById('4');
+    const input5 = document.getElementById('5');
+    const input6 = document.getElementById('6');
+
+    input1.addEventListener('paste', (event) => {
+      event.preventDefault();
+      let paste = (event.clipboardData || window.clipboardData).getData('text');
+      const selection = window.getSelection();
+      const arr = paste.split('');
+      console.log(arr);
+      
+      for (let i = 0; i < arr.length; i++) {
+        const input = document.getElementById(i + 1 + '');
+        input.value = arr[i];
+        
+      }
+    
+      //if (!selection.rangeCount) return;
+      // selection.deleteFromDocument();
+      // selection.getRangeAt(0).insertNode(document.createTextNode(paste));
+      // selection.collapseToEnd();
+    });
+      
+    
+  </script>
+</body>
+</html>
