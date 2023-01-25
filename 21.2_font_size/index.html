@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .text {
+      font-size: 20px;
+    }
+    .plus {
+
+    }
+    .minus {
+
+    }
+  </style>
+</head>
+<body>
+  <div class="text">press to change font size</div>
+  <button class="plus">+</button>
+  <button class="minus">-</button>
+
+  <script>
+
+    const plusBtn = document.querySelector('.plus');
+    const minusBtn = document.querySelector('.minus');
+    const text = document.querySelector('div');
+
+    plusBtn.addEventListener('click', function() {
+      const style = getComputedStyle(text).getPropertyValue('font-size');
+      const arr = style.split('').slice(0, -2);
+      const num = Number(arr.join(''));
+      if (num <= 100) {
+        text.style.setProperty('font-size', `${num + 1}px` );
+      }
+    });
+
+    minusBtn.addEventListener('click', function() {
+      const style = getComputedStyle(text).getPropertyValue('font-size');
+      const arr = style.split('').slice(0, -2);
+      const num = Number(arr.join(''));
+      if (num >= 6) {
+        text.style.setProperty('font-size', `${num - 1}px` );
+      }
+    });
+  </script>
+</body>
+</html>
