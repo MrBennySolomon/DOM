@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .red {
+      color: red;
+    }
+    .smiley {
+      width: 100px;
+      height: 100px;
+      background: url(./img/smiley.png) no-repeat center center/cover;
+    }
+  </style>
+</head>
+<body>
+  <p>How many smileys do you want to see?</p>
+  <input type="text">
+  <button>submit</button>
+
+  <div></div>
+
+  <script>
+     const input = document.querySelector('input');
+     const button = document.querySelector('button');
+     const div = document.querySelector('div');
+
+     input.addEventListener('focus', function() {
+      div.innerHTML = '';
+     })
+
+     button.addEventListener('click', function() {
+       if (!Number(input.value) || Number(input.value) < 1) {
+        div.classList.add('red');
+        div.innerText = 'please insert positive number';
+        input.value = '';
+        return;
+       }
+        div.classList.remove('red');
+        div.innerText = '';
+       
+
+       const num = Number(input.value);
+       for (let i = 0; i < num; i++) {
+        const img = document.createElement('img');
+        img.setAttribute('class', 'smiley');
+        div.appendChild(img);
+       }
+       document.body.appendChild(div);
+     });
+     
+  </script>
+</body>
+</html>
