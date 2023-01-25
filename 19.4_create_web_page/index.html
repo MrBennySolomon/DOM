@@ -11,9 +11,6 @@
       padding: 0;
       box-sizing: border-box;
     }
-    body {
-
-    }
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -23,9 +20,6 @@
       background-color: #333;
       color: white;
       font-size: 30px;
-    }
-    .right {
-      
     }
     h1 {
       padding-left: 20px;
@@ -38,43 +32,38 @@
     }
     ul li {
       padding: 20px;
-
     }
   </style>
 </head>
 <body>
-  
-
   <script>
     const divLeft = document.createElement('div');
-    divLeft.setAttribute('class', 'left');
     const divRight = document.createElement('div');
-    divRight.setAttribute('class', 'right');
     const ul = document.createElement('ul');
+    const h1 = document.createElement('h1');
+    const navbar = document.createElement('div');
+
+    divRight.setAttribute('class', 'right');
+    divLeft.setAttribute('class', 'left');
+    navbar.setAttribute('class', 'navbar');
+
     li1 = document.createElement('li');
     li1.innerText = 'ABOUT';
     li2 = document.createElement('li');
     li2.innerText = 'CONTACT';
     li3 = document.createElement('li');
     li3.innerText = 'INFO';
-    const h1 = document.createElement('h1');
     h1.innerText = 'LOGO';
+
     ul.appendChild(li1);
     ul.appendChild(li2);
     ul.appendChild(li3);
-
     divLeft.appendChild(h1);
     divRight.appendChild(ul);
-
-    const navbar = document.createElement('div');
-    navbar.setAttribute('class', 'navbar');
     navbar.appendChild(divLeft);
     navbar.appendChild(divRight);
 
-    
-
     document.body.appendChild(navbar);
-
   </script>
 </body>
 </html>
