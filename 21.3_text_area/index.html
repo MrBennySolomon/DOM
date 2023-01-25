@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .text-area {
+      display:block;
+    }
+    .alert {
+      color: red;
+    }
+    .none {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <p>Why are you interested in this position?</p>
+  <textarea class="text-area" rows="7" cols="40"></textarea>
+  <p class="alert none">You must enter at least 100
+characters before clicking the button</p>
+  <button>Click here!</button>
+
+  <script>
+    const textArea = document.querySelector('textarea');
+    const button = document.querySelector('button');
+    const alert = document.querySelector('.alert');
+
+    button.addEventListener('click', function() {
+      if (textArea.value.length < 100) {
+        alert.classList.remove('none');
+      }else {
+        alert.classList.add('none');
+      }
+    });
+  </script>
+</body>
+</html>
