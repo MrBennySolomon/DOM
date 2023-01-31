@@ -59,9 +59,11 @@
     const minutes  = document.querySelector('.minutes');
     const seconds  = document.querySelector('.seconds');
 
-    let counter    = 0;
-    let hourCounter = 14;
-    let minuteCounter = 9;
+    const date = new Date();
+
+    let counter    = Number(date.getSeconds());
+    let hourCounter = Number(date.getHours());
+    let minuteCounter = Number(date.getMinutes());
     const time     = setInterval(secondInterval, 1000);
 
 
@@ -74,10 +76,11 @@
       hours.innerText = hourCounter / 10 < 1 ? '0' + hourCounter : hourCounter;
       minutes.innerText = minuteCounter / 10 < 1 ? '0' + minuteCounter : minuteCounter;
 
-      if (counter === 60) {
+      if (counter === 59) {
+        counter = 0;
         minuteCounter++;
       }
-      if (minuteCounter === 60) {
+      if (minuteCounter === 59) {
         minuteCounter = 0;
         hourCounter++;
       }
