@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-size: 62.5%;
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 3rem;
+      background-color: black;
+      color: white;
+    }
+    .hours,
+    .minutes,
+    .seconds,
+    .mili-seconds{
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 5vw;
+      height: 10vh;
+      background-color: #333;
+      font-size: 4rem;
+    }
+    
+    button {
+      font-weight: bold;
+      color: white;
+      font-size: 2rem;
+      margin-left: 2rem;
+      padding: 1.5rem 5rem;
+    }
+    .start {
+    background-color: greenyellow;
+    }
+    .stop {
+      background-color: lightcoral;
+    }
+  </style>
+</head>
+<body>
+  <div class="hours"></div>:
+  <div class="minutes"></div>:
+  <div class="seconds"></div>:
+  <div class="mili-seconds"></div>
+  <div class="buttons">
+    <button class="start">START</button>
+    <button class="stop">STOP</button>
+  </div>
+
+  <script>
+    const start       = document.querySelector('.start');
+    const stop        = document.querySelector('.stop');
+    const miliSeconds = document.querySelector('.mili-seconds') 
+    const hours       = document.querySelector('.hours');
+    const minutes     = document.querySelector('.minutes');
+    const seconds     = document.querySelector('.seconds');
+
+    let secondsCounter       = 0;
+    let miliSecondsCounter   = 0;
+    let hoursCounter         = 0;
+    let minutesCounter       = 0;
+    let time;
+    let id;
+
+    start.addEventListener('click', function() {
+      time = setInterval(miliSecondsInterval, 10);
+    });
+
+    stop.addEventListener('click', function() {
+      clearInterval(time);
+    });
+
+
+
+    function miliSecondsInterval() {
+      miliSecondsCounter++;
+      miliSeconds.innerText = miliSecondsCounter / 10 < 1 ? '0' + miliSecondsCounter : miliSecondsCounter;
+      seconds.innerText     = secondsCounter / 10 < 1 ? '0' + secondsCounter : secondsCounter;
+      hours.innerText       = hoursCounter / 10 < 1 ? '0' + hoursCounter : hoursCounter;
+      minutes.innerText     = minutesCounter / 10 < 1 ? '0' + minutesCounter : minutesCounter;
+      
+      if (miliSecondsCounter === 60) {
+        miliSecondsCounter = 0;
+        secondsCounter++;
+      }
+      if (secondsCounter === 60) {
+        secondsCounter = 0;
+        minuteCounter++;
+      }
+      if (minuteCounter === 60) {
+        minuteCounter = 0;
+        hourCounter++;
+      }
+      if (hourCounter === 24) {
+        hourCounter = 0;
+      }
+    }
+
+  </script>
+</body>
+</html>
