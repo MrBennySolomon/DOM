@@ -21,20 +21,20 @@ const board = [
   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
   ]
 
-// const dirt = document.createElement('div');
-// dirt.setAttribute('class', 'dirt');
-// const grass = document.createElement('div');
-// grass.setAttribute('class', 'grass');
-// const stone = document.createElement('div');
-// stone.setAttribute('class', 'stone');
-// const wood = document.createElement('div');
-// wood.setAttribute('class', 'wood');
-// const leaves = document.createElement('div');
-// leaves.setAttribute('class', 'leaves');
-// const sky = document.createElement('div');
-// sky.setAttribute('class', 'sky');
-// const cloud = document.createElement('div');
-// cloud.setAttribute('class', 'cloud');
+const dirt = document.createElement('div');
+dirt.setAttribute('class', 'dirt');
+const grass = document.createElement('div');
+grass.setAttribute('class', 'grass');
+const stone = document.createElement('div');
+stone.setAttribute('class', 'stone');
+const wood = document.createElement('div');
+wood.setAttribute('class', 'wood');
+const leaves = document.createElement('div');
+leaves.setAttribute('class', 'leaves');
+const sky = document.createElement('div');
+sky.setAttribute('class', 'sky');
+const cloud = document.createElement('div');
+cloud.setAttribute('class', 'cloud');
   
 
 const buttonStart = document.querySelector('.button-start');

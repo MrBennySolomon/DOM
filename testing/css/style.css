@@ -8,22 +8,29 @@ body {
   font-size: 62.5%;
   width: 100vw;
   height: 100vh;
-  display: flex;
+  
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+
+  display: grid;
+  grid-template-rows: repeat(20, 1fr);
+  grid-template-columns: repeat(20, 1fr);
+  background-color: #333;
 }
 
-#game-board {
+/* #game-board {
   width: 100vmin;
   height: 100vmin;
   display: grid;
   grid-template-rows: repeat(20, 1fr);
   grid-template-columns: repeat(20, 1fr);
-}
+  background-color: #333;
+} */
 
 .game {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
