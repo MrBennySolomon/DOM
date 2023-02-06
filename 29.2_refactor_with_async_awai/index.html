@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Refactor with async await</title>
+  </head>
+  <body>
+    <h1>Jokes</h1>
+    <button>Joke of the day</button>
+
+    <div id="container">
+      <div class="title"></div>
+      <div class="joke"></div>
+    </div>
+    <script>
+      const btn = document.querySelector("button");
+      const titleEl = document.querySelector(".title");
+      const jokeEl = document.querySelector(".joke");
+
+      const fetchJoke = async () => {
+        const response = await fetch("https://api.jokes.one/jod");
+        const {
+          contents: { jokes },
+        } = await response.json();
+
+        const title = jokes[0].joke.title;
+        const text = jokes[0].joke.text;
+        titleEl.textContent = title;
+        jokeEl.textContent = text;
+      };
+      btn.addEventListener("click", fetchJoke);
+    </script>
+  </body>
+</html>
