@@ -1,22 +1,18 @@
 const btn = document.querySelector('button.btn');
-const input = document.querySelector('input.input');
-const user = document.querySelector('div.user');
+const title = document.querySelector('input.title');
+const year = document.querySelector('input.year');
+const data = document.querySelector('div.data');
 
-const fetchGithubUser = async () => {
-  const response = await fetch(`https://api.github.com/users/${input.value}`);
-  const data = await response.json();
+const fetchMovie = async () => {
+  const response = await fetch(`http://www.omdbapi.com/?y=${year.value}&t=${title.value}&plot=full&i=tt3896198&apikey=91f7cf8b`);
+  const info = await response.json();
 
-  user.innerHTML += `
-  <div class="info">
-    <img src="${data.avatar_url}" alt="${data.name}" width="100px" height="100px">
-    <p>${data.name} have ${data.public_repos} public repos </p>
-  </div>
-  `;
+  data.innerHTML = `movie title: ${info.Title} | year: ${info.Year} | rating: ${info.imdbRating} / 10 stars`;
 };
 
 document.addEventListener('keyup', (event) => {
   if (event.key === 'Enter') {
-    fetchGithubUser();
+    fetchMovie();
   }
 });
-btn.addEventListener("click", fetchGithubUser);
+btn.addEventListener("click", fetchMovie);
