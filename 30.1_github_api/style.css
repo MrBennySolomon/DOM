@@ -19,6 +19,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 2rem;
 
   color: white;
   font-size: 2rem;
@@ -29,7 +30,7 @@ body {
 }
 
 .input {
-  height: 30%;
+  height: 10%;
   width: 50%;
   border: none;
   font-size: 2rem;
@@ -39,7 +40,7 @@ body {
 }
 
 .btn {
-  height: 30%;
+  height: 10%;
   width: 50%;
   border: none;
   font-size: 2rem;
@@ -49,17 +50,27 @@ body {
 }
 
 .user {
-  height: 30vh;
-  width: 30vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  
+  height: 70vh;
+  width: 100%;
 
-  border: 2px solid white;
   color: white;
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
-.info {
-  width: 300px;
-  height: 300px;
-  border: 2px solid white;
+label.info {
+  display: inline;
+  width: 200px;
+  height: 200px;
+  font-size: 1rem;
+  padding: 2rem 2rem;
+}
+
+img {
+  border-radius: 50%;
 }

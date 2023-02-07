@@ -7,10 +7,10 @@ const fetchGithubUser = async () => {
   const data = await response.json();
 
   user.innerHTML += `
-  <div class="info">
+  <label class="info">
     <img src="${data.avatar_url}" alt="${data.name}" width="100px" height="100px">
     <p>${data.name} have ${data.public_repos} public repos </p>
-  </div>
+  </label>
   `;
 };
 
