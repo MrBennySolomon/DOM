@@ -92,14 +92,19 @@ console.log(street, city, street1, city1);
 // ARRAY DESTRUCTURING
 
 // Exercise 1: Use array destructuring to get the first two hobbies of the first person in the data array
-
+const [people1,] = data;
+const [hobbie1, hobbie2,] = people1.hobbies;
+console.log(hobbie1, hobbie2);
 // Exercise 2: Use array destructuring to get the first and third friend of the second person in the data array
-
+const [,people2,] = data;
+const [friend1,, friend3] = data[1].friends;
+console.log(friend1, friend3);
 
 // OBJECT DESTRUCTURING
 
 // Exercise 1: Use object destructuring to get the name, age, and city of the third person in the data array
-
+const { age, name, city:city2 } = data[2];
+console.log(age, name, city2);
 // Exercise 2: Use object destructuring to get the name and age of the first friend of the third person in the data array
 
 
