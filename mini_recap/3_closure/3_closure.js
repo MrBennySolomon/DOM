@@ -15,7 +15,36 @@ console.log(checkPassword("notsecret")); // "Access denied."
 
 
 // 1. Create a function counter that returns a function that increments and returns a counter variable. The counter should not be accessible from outside the function.
-
+function incrementCounter() {
+  let counter = 0;
+  return function() {
+    return counter++; 
+  };
+}
+const increment = incrementCounter();
+console.log(increment());
+console.log(increment());
+console.log(increment());
 // 2. Create a function addMaker that takes in a value and returns a function that adds that value to its input.
-
+function addMaker(value) {
+  return function(input) {
+    return input + value;
+  }
+}
+const add5 = addMaker(5);
+console.log(add5(4));
 // 3. Create a function adder that takes in a value and returns an object with two methods: add and reset. The add method takes in a number and returns the sum of the original value and the input, and the reset method resets the value back to the original value.
+function adder(value) {
+  return {
+    add(input) {
+      return input + value;
+    },
+    reset() {
+      return value;
+    }
+  }
+}
+
+const obj = adder(5);
+console.log(obj.add(4));
+console.log(obj.reset(4));
