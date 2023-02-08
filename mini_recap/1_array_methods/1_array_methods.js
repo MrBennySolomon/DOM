@@ -81,13 +81,14 @@ const peopleInCA = data.filter(person => person.address.state === "CA");
 console.log(peopleInCA);
 
 // Exercise 1: Use the filter method to get all the friends of John Doe
-const johnDoeFriends = data.filter(person => person.friends)
+const johnDoeFriends = data.filter(person => person.name === "John Doe")[0].friends;
 console.log(johnDoeFriends);
 // Exercise 2: Use the filter method to get all the people who live in New York
-
+const getAllPeopleLiveInNY = data.filter(person => person.address.city === 'New York').map(person => person.name);
+console.log(getAllPeopleLiveInNY);
 // Exercise 3: Use the filter method to get all the people who are older than 30
-
-
+const getAllPeopleOlderThen30 = data.filter(person => person.age > 30);
+console.log(getAllPeopleOlderThen30);
 // MAP
 
 // Example:
