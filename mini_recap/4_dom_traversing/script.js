@@ -1,7 +1,7 @@
 // Exercise 1: Get the element with the ID of "header"
-
+const header = document.getElementById('header');
 // Exercise 2: Get all elements with the class name of "list-item"
-
+const listItemsArr = document.querySelectorAll('.list-item');
 // Exercise 3: Get the first element that matches the CSS selector of ".list-item"
 
 // Exercise 4: Get all elements that match the CSS selector of ".list-item"

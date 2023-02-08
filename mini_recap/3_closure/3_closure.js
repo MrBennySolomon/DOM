@@ -34,13 +34,14 @@ function addMaker(value) {
 const add5 = addMaker(5);
 console.log(add5(4));
 // 3. Create a function adder that takes in a value and returns an object with two methods: add and reset. The add method takes in a number and returns the sum of the original value and the input, and the reset method resets the value back to the original value.
-function adder(value) {
+function adder() {
+  let value = 0;
   return {
     add(input) {
-      return input + value;
+      return input + this.value;
     },
     reset() {
-      return value;
+      this.value = 0;
     }
   }
 }
