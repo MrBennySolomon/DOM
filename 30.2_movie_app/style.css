@@ -20,14 +20,7 @@ body {
 }
 
 h1 {
-
-margin-bottom: 2rem;}
-.title {
-  
-}
-
-.year {
-
+  margin-bottom: 2rem;
 }
 
 .data {
@@ -37,13 +30,9 @@ margin-bottom: 2rem;}
   font-size: 1.5rem;
 }
 
-.btn {
-
-}
-
 img {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
 }
 

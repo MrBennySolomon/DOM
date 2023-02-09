@@ -103,10 +103,13 @@ console.log(friend1, friend3);
 // OBJECT DESTRUCTURING
 
 // Exercise 1: Use object destructuring to get the name, age, and city of the third person in the data array
-const { age, name, city:city2 } = data[2];
+const [,,people3] = data;
+const { age, name, address: { city:city2 } } = people3;
 console.log(age, name, city2);
 // Exercise 2: Use object destructuring to get the name and age of the first friend of the third person in the data array
-
+const [friend4] = people3.friends;
+const {name4, age4} = friend4;
+console.log(name4, age4);
 
 // THE REST OPERATOR
 
